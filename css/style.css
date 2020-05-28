@@ -12,20 +12,62 @@
 
 .items .container .content {
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 .items .container .content .title {
   padding: 15px;
-  text-align: center;
   font-weight: 800;
   background-color: #00b894;
   color: black;
   margin-bottom: 50px;
+  position: fixed;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999;
+  -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.15);
 }
 
-.items .container .content #btn {
+.items .container .content .title h1 {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  text-align: center;
+  text-align: left;
+}
+
+.items .container .content .title h1::before {
+  content: "\f0ae";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 4px;
+  color: whitesmoke;
+  margin-right: 15px;
+}
+
+.items .container .content .title #time-content {
+  font-size: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.items .container .content .content-item {
+  padding: 150px 0;
+}
+
+.items .container .content .content-item .btn {
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
@@ -36,12 +78,81 @@
   outline: none;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  min-width: 48% !important;
+  cursor: pointer;
 }
 
-.items .container .content #btn:hover {
+.items .container .content .content-item .btn:hover {
   background-color: #00b894;
   -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.items .container .content .content-item input {
+  padding: 15px 20px;
+  width: 50%;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.items .container .content .content-item input:focus {
+  outline: 0;
+}
+
+.items .container .content .content-item .friends-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+
+.items .container .content .content-item .friends-item .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.items .container .content .content-item .friends-item .item:first-child {
+  margin-right: 10px;
+}
+
+.items .container .content .content-item .friends-item .item .btn {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.items .container .content .content-item #friends-list {
+  list-style: none;
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.items .container .content .content-item #friends-list li {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.items .container .content .content-item #friends-list li::before {
+  content: "\f007";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 4px;
+  color: #00b894;
+}
+
+.items .container .content .content-item #friends-list li.empty:before {
+  content: "\f235";
+  color: red;
 }
 
 .items .container .content #welcome-content {
@@ -52,7 +163,25 @@
   text-transform: capitalize;
 }
 
-.items .container .content #time-content {
-  font-size: 25px;
+.items .container .content #welcome-content:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 4px;
+  color: #00b894;
+}
+
+.items .container .content #welcome-content[data-icon=happy]:before {
+  content: '\f118';
+}
+
+.items .container .content #welcome-content[data-icon=sad]:before {
+  content: '\f119';
+  color: red;
+}
+
+.items .container .content #welcome-content[data-icon=new]:before {
+  content: "\f2a7";
 }
 /*# sourceMappingURL=style.css.map */

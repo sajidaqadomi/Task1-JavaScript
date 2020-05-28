@@ -10,44 +10,175 @@
        
         .content{
             text-align: center;
-            height: 100vh;
-           
+            min-height: 100vh;
             background-color: rgba(#000000, .5);
+            position: relative;
             .title{
                 padding: 15px ;
-                text-align: center;
+                //text-align: center;
                 font-weight: 800;
                 background-color: rgba(#00b894 ,  1.0);
                 color: black ;
                 margin-bottom:50px ;
+                position: fixed;
+                width:80%;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                h1{
+                    flex:4;
+                    text-align: center;
+                    text-align: left;
+                    &::before{
+                        content: "\f0ae";
+                        font-family: FontAwesome;
+                        font-style: normal;
+                        font-weight: normal;
+                        text-decoration: inherit;
+                        margin-right: 4px;
+                        color:whitesmoke;
+                        margin-right: 15px;
+                       
+                    }
+
+                    
+                }
+               // margin: auto;
+                
+                z-index: 999;
+               // border-radius: 35px;
+                box-shadow: 1px 2px 15px rgba( #000000,.15);
+                #time-content{
+                    font-size: 25px;
+                    flex: 1;
+                }
             }
-            #btn{
-                padding: 15px 20px;
-                border: none;
-                border-radius: 5px;
-                background-color: rgba(#00b894,.5);
-                color: white;
-                font-weight: bold;
-                font-size: 16px;
-                outline: none;
-                transition: all .3s ease-in-out;
-                &:hover{
-                    background-color: rgba(#00b894, 1);
-                    box-shadow:2px  2px 12px rgba( #000000, .2);
+            .content-item{
+                padding: 150px 0;
+               .btn{
+                    padding: 15px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: rgba(#00b894,.5);
+                    color: white;
+                    font-weight: bold;
+                    font-size: 16px;
+                    outline: none;
+                    transition: all .3s ease-in-out;
+                    min-width: 48% !important;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: rgba(#00b894, 1);
+                        box-shadow:2px  2px 12px rgba( #000000, .2);
+    
+                    }
+
+    
+                }
+              
+                input{
+                    padding: 15px 20px;
+                    width: 50%;
+                    
+                    //display: block;
+                    //margin: auto;
+                    margin-right: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    &:focus{
+                        outline: 0;
+                    }
+
+                }
+                .friends-item{
+                    display: flex;
+                    margin-top: 15px;
+                    .item{
+                        flex:1;
+                        &:first-child{
+                            margin-right: 10px;
+                        }
+                        
+                        .btn{
+                            display: block;
+                            margin-bottom: 15px;
+                            width: 100%;
+                        }
+                    }
+                }
+                #friends-list{
+                    list-style: none;
+                    width: 80%;
+                    margin: auto;
+                    margin-top: 15px;
+                    li{
+                        margin-bottom: 10px;
+                        padding: 15px;
+                        background-color:rgba(#ffffff, .9);
+                        color: black;
+                        font-size: 20px;
+                        text-align: left;
+                        text-transform: capitalize;
+                        &::before{
+                            content: "\f007";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            margin-right: 4px;
+                            color: #00b894;
+                           
+                        }
+                        &.empty:before{
+                            content: "\f235";
+                            color:red;
+
+                        }
+                    }
 
                 }
 
             }
+           
+            
+           
+            
+            
             #welcome-content{
                 margin: 20px;
                 font-size: 30px;
                 transition: all .3s;
                 text-transform: capitalize;
+                &:before{
+                    //content: attr(data-icon);
+                    font-family: FontAwesome;
+                    font-style: normal;
+                    font-weight: normal;
+                    text-decoration: inherit;
+                    margin-right: 4px;
+                    color: #00b894;
+                }
+                &[data-icon=happy]:before{
+                    content:'\f118'
+
+                }
+                &[data-icon=sad]:before{
+                    content:'\f119';
+                    color:red;
+                    
+
+                }
+                &[data-icon=new]:before{
+                    content:"\f2a7";
+                    
+                    
+
+                }
                 
+
             }
-            #time-content{
-                font-size: 25px;
-            }
+           
             
 
         }
