@@ -29,6 +29,7 @@ addFriend=(e)=>{
     }
     welcomecontent.innerHTML= msg;
     addSpecial(friends);
+    showFrinds(friends);
 
 }
 addSpecial=(friends)=>{
@@ -70,9 +71,9 @@ showTime=()=>{
 
 
 }
-
+setInterval(showTime, 500);
 sendBtn.addEventListener('click',addFriend);
-sendBtn.addEventListener('mouseover',showTime);
+//sendBtn.addEventListener('mouseover',showTime);
 showBtn.addEventListener('click',()=>showFrinds(friends));
 specialBtn.addEventListener('click',()=>showFrinds(specialFriends));
 
